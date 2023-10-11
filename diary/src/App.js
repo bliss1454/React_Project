@@ -5,19 +5,20 @@ import Home from './pages/Home';
 import Diary from './pages/Diary';
 import Edit from './pages/Edit';
 import New from './pages/New';
-import RouteTest from './components/RouteTest';
 
 function App() {
   return (
     <BrowserRouter>
       <div className='App'>
         <h2>App.js</h2>
+
+        <img src={Process.env.PUBLIC URL + '/assets/happy.png'}/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/new' element={<New/>}/>
           <Route path='/edit' element={<Edit/>}/>
           <Route path='/diary/:id' element={<Diary/>}/>
-        </Routes> <RouteTest/>
+        </Routes>
       </div>
     </BrowserRouter>
   )
