@@ -6,6 +6,8 @@ import MyButton from "./MyButton";
 import MyHeader from "./MyHeader";
 import EmotionItem from "./EmotionItem";
 
+import { getStringDate } from "../util/date";
+
 const emotionList = [
     {
         emotion_id: 1,
@@ -34,11 +36,7 @@ const emotionList = [
     }
 ]
 
-const getStringDate = (date) => {
-    return date.toISOString().slice(0,10);
-}
-
-const DiaryEditor = (isEdit, originData) => {
+const DiaryEditor = ({isEdit, originData}) => {
 
     const contentRef = useRef();
     const [content,setContent] = useState("");
