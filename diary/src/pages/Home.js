@@ -40,17 +40,19 @@ const Home = () => {
     },[data]);
 
     const increaseMonth = () => {
-        setCurDate(new Date(curDate.getFullYear(), curDate.getMonth()+1, curDate.getDate()))
+        setCurDate(
+            new Date(curDate.getFullYear(), curDate.getMonth()+1, curDate.getDate()))
     }
     const decreaseMonth = () => {
-        setCurDate(new Date(curDate.getFullYear(), curDate.getMonth()-1, curDate.getDate()))
+        setCurDate(
+            new Date(curDate.getFullYear(), curDate.getMonth()-1, curDate.getDate()))
     }
 
     return (
         <div>
             <MyHeader headText={headText} 
-            leftChild={<MyButton text={"<"} onClick={decreaseMonth}/>} 
-            rightChild={<MyButton text={">"} onClick={increaseMonth}/>}/>
+                leftChild={<MyButton text={"<"} onClick={decreaseMonth}/>} 
+                rightChild={<MyButton text={">"} onClick={increaseMonth}/>}/>
             <DiaryList diaryList={data}/>
         </div>
     )
