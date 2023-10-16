@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from 'react';
+import React, { useEffect, useReducer, useRef } from 'react';
 import './App.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
@@ -14,10 +14,7 @@ const reducer = (state, action) => {
       return action.data;
     }
     case 'CREATE' : {
-      const newItem = {
-        ...action.data
-      };
-      newState = [newItem, ...state];
+      newState = [action.data, ...state];
       break;
     }
     case 'REMOVE': {
@@ -25,64 +22,51 @@ const reducer = (state, action) => {
       break;
     }
     case 'EDIT': {
-      newState = state.map((it) => it.id === action.data.id? {...action.data}: it)
+      newState = state.map((it) => 
+        it.id === action.data.id? {...action.data}: it
+      );
       break;
     }
     default:
       return state;
   }
+
+  localStorage.setItem("diary", JSON.stringify(newState));
   return newState;
 };
 
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
-const dummyData = [
-  {
-    id:1,
-    emotion:1,
-    content:"오늘의 일기 1번",
-    date: 1697109631173,
-  },
-  {
-    id:2,
-    emotion:2,
-    content:"오늘의 일기 2번",
-    date: 1697109631176,
-  },
-  {
-    id:3,
-    emotion:3,
-    content:"오늘의 일기 3번",
-    date: 1697109631179,
-  },
-  {
-    id:4,
-    emotion:4,
-    content:"오늘의 일기 4번",
-    date: 1697109631189,
-  },
-  {
-    id:5,
-    emotion:5,
-    content:"오늘의 일기 5번",
-    date: 1697109631199,
-  },
-]
 
 function App() {
-  const [data, dispatch] =useReducer(reducer,dummyData);
+  const [data, dispatch] =useReducer(reducer,[]);
+
+  useEffect(() => {
+    const localData = localStorage.getItem('diary');
+    if(localData) {
+      const diaryList = JSON.parse(localData).sort(
+        (a,b) => parseInt(b.id) - parseInt(a.id)
+      );
+      dataId.current = parseInt(diaryList[0].id) + 1;
+
+      dispatch({type: "INIT", data: diaryList});
+    }
+  },[]);
 
   const dataId = useRef(0);
   //CREATE
   const onCreate = (date,content,emotion) => {
-    dispatch({type:"CREATE", data:{
-      id: dataId.current,
-      date: new Date(date).getTime(),
-      content,
-      emotion
-    }})
-    dataId.current+=1;
+    dispatch({
+      type:"CREATE", 
+      data:{
+        id: dataId.current,
+        date: new Date(date).getTime(),
+        content,
+        emotion,
+      },
+    });
+    dataId.current += 1;
   }
   //REMOVE
   const onRemove = (targetId) => {
