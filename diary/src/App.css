@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Serif+KR&display=swap');
+/* font-family: 'Nanum Gothic', sans-serif; */
+/* font-family: 'Nanum Myeongjo', serif; */
+/* font-family: 'Noto Serif KR', serif; */
 
 body {
   background-color: #f6f6f6;
@@ -24,7 +27,7 @@ body {
 
 #root {
   background-color: white;
-  box-shadow: rgba(100,100,111,0.2) opx 7px 29px 0px;
+  box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
 }
 
 .App {
@@ -39,7 +42,7 @@ body {
   border: none;
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
-  font-size: 18px;
+  font-size: 15px;
   white-space: nowrap;
   font-family: 'Noto Serif KR', serif;
 }
@@ -119,7 +122,7 @@ header button {
   padding-right: 20px;
   cursor: pointer;
   font-family: 'Noto Serif KR', serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* DiaryItem */
@@ -172,12 +175,12 @@ header button {
 
 .DiaryItem .diary_date{
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 5px;
 }
 
 .DiaryItem .diary_content_preview {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .DiaryItem .btn_wrapper {
@@ -194,7 +197,7 @@ header button {
 }
 
 .DiaryEditor h4 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -208,7 +211,7 @@ header button {
   padding-right: 20px;
   cursor: pointer;
   font-family: 'Noto Serif KR', serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .DiaryEditor .emotion_list_wrapper {
@@ -219,7 +222,7 @@ header button {
 
 .DiaryEditor textarea {
   font-family: 'Noto Serif KR', serif;
-  font-size: 20px;
+  font-size: 16px;
   box-sizing: border-box;
   width: 100%;
   min-height: 200px;

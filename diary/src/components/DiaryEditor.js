@@ -13,7 +13,7 @@ const DiaryEditor = ({isEdit, originData}) => {
 
     const contentRef = useRef();
     const [content,setContent] = useState("");
-    const [emotion,setEmotion] = useState(3);
+    const [emotion,setEmotion] = useState(2);
     const [date,setDate] = useState(getStringDate(new Date()));
 
     const {onCreate, onEdit, onRemove} = useContext(DiaryDispatchContext);
@@ -102,7 +102,7 @@ const DiaryEditor = ({isEdit, originData}) => {
                     <h4>오늘의 일기</h4>
                     <div className="input_box text_wrapper">
                         <textarea 
-                            placeholder="오늘은 어땠나요?"
+                            placeholder="오늘은 어떤 하루였나요?"
                             ref={contentRef} 
                             value={content} 
                             onChange={(e)=> setContent(e.target.value)}
