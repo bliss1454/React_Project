@@ -13,6 +13,11 @@ const Home = () => {
     const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() +1}월`;
 
     useEffect(() => {
+        const titleElement = document.getElementsByTagName("title")[0];
+        titleElement.innerHTML = `내가 그린 기린 일기`;
+    },[])
+
+    useEffect(() => {
         if(diaryList.length >= 1) {
 
             const firstDay = new Date(
