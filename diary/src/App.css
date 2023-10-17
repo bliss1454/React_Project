@@ -86,6 +86,7 @@ header .head_btn_left {
   justify-content: start;
 }
 
+
 header .head_btn_right {
   width: 25%;
   justify-content: end;
@@ -101,6 +102,10 @@ header button {
   margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
+}
+
+.DiaryList .menu_wrapper .left_col {
+
 }
 
 .DiaryList .menu_wrapper .right_col {
@@ -124,6 +129,29 @@ header button {
   font-family: 'Noto Serif KR', serif;
   font-size: 16px;
 }
+
+.DiaryList .menu_wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 650px) {
+  .DiaryList .menu_wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .DiaryList .menu_wrapper .right_col {
+    flex-grow: initial;
+  }
+
+  .DiaryList .menu_wrapper .right_col button {
+    width: auto;
+  }
+}
+
 
 /* DiaryItem */
 .DiaryItem {
