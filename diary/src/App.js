@@ -89,7 +89,17 @@ function App() {
       <DiaryDispatchContext.Provider 
         value={{onCreate, onEdit, onRemove}} >
       <BrowserRouter>
-        <div className='App'>
+        {/* <div className='App'> */}
+        <div className='App'x
+           style={{ 
+            background: `url(${process.env.PUBLIC_URL}/girinnee.png)`, 
+            backgroundSize: '40%', 
+            backgroundPosition:'center bottom', 
+            backgroundRepeat: 'no-repeat',
+
+        }}
+
+        >
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/new' element={<New/>}/>

@@ -380,6 +380,7 @@ header button {
 
 .DiaryPage .diary_content_wrapper {
   width: 100%;
+  height: 30%;
   background-color: #ececec;
   border-radius: 5px;
   word-break: keep-all;
@@ -389,8 +390,9 @@ header button {
 .DiaryPage .diary_content_wrapper p {
   padding: 20px;
   text-align: left;
-  font-size: 20px;
-  font-family: 'Noto Serif KR', serif;
+  font-size: 18px;
+  /* font-family: 'Nanum Myeongjo', serif; */
+  font-family: 'Nanum Gothic', sans-serif;
   font-weight: 400;
   line-height: 2;
 }
